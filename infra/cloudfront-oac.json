@@ -1,0 +1,7 @@
+{
+  "Name": "blog-s3-oac",
+  "Description": "OAC for blog S3 bucket",
+  "SigningProtocol": "sigv4",
+  "SigningBehavior": "always",
+  "OriginAccessControlOriginType": "s3"
+}
