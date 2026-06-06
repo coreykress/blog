@@ -1,0 +1,50 @@
+{
+  "CallerReference": "blog-dist-1",
+  "Comment": "Blog CloudFront distribution",
+  "DefaultRootObject": "index.html",
+  "HttpVersion": "http2and3",
+  "Enabled": true,
+  "Aliases": {
+    "Quantity": 1,
+    "Items": ["azdfg.com"]
+  },
+  "Origins": {
+    "Quantity": 1,
+    "Items": [
+      {
+        "Id": "S3Origin",
+        "DomainName": "blog-azdfg-com.s3.us-east-1.amazonaws.com",
+        "S3OriginConfig": {
+          "OriginAccessIdentity": ""
+        },
+        "OriginAccessControlId": "E2GR15YOL8GPLO"
+      }
+    ]
+  },
+  "DefaultCacheBehavior": {
+    "TargetOriginId": "S3Origin",
+    "ViewerProtocolPolicy": "redirect-to-https",
+    "Compress": true,
+    "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+    "AllowedMethods": {
+      "Quantity": 2,
+      "Items": ["GET", "HEAD"]
+    }
+  },
+  "CustomErrorResponses": {
+    "Quantity": 1,
+    "Items": [
+      {
+        "ErrorCode": 403,
+        "ResponseCode": "404",
+        "ResponsePagePath": "/404.html",
+        "ErrorCachingMinTTL": 10
+      }
+    ]
+  },
+  "ViewerCertificate": {
+    "ACMCertificateArn": "arn:aws:acm:us-east-1:058264355145:certificate/43d8547d-2422-45e2-8ff3-a25fa1f1ae37",
+    "SSLSupportMethod": "sni-only",
+    "MinimumProtocolVersion": "TLSv1.2_2021"
+  }
+}
