@@ -6,7 +6,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://yourdomain.com',
+	site: 'https://yourdomain.com', // TODO: replace with real domain before deploying
 	output: 'static',
 	integrations: [mdx(), sitemap()],
 	fonts: [
